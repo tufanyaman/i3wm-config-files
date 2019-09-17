@@ -164,8 +164,9 @@ bar {
 }
 }
 
-new_window normal 0 px
 new_window 1pixel
+new_window normal 0 px
+new_window none
 
 
 # Startup Apps
@@ -175,7 +176,9 @@ exec_always rfkill block bluetooth
 exec_always rfkill block gps
 exec_always rfkill block nfc
 exec_always /etc/init.d/bluetooth stop
-exec always rfkill block btusb
+exec_always rfkill block btusb
+exec_always xrandr --output VIRTUAL1 --off --output eDP1 --mode 1366x768 --pos 0x0 --rotate normal --output DP1 --off --output HDMI2 --off --output HDMI1 --off --output DP2 --primary --mode 1920x1080 --pos 1366x0 --rotate normal
+
 # key-bindings
 
 # Pulse Audio controls
