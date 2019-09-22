@@ -200,3 +200,20 @@ bindsym $mod+Shift+f exec /usr/bin/filezilla
 bindsym $mod+Shift+q kill
 bindsym Print exec screenshot
 bindsym $mod+Shift+Delete exec i3lock -d -c 000000
+
+#keyboard layout
+
+set $keyboard_layout Keyboard Layout: (1) US English, (2) Polish, (3) Russian, (4) French, (5) Chinese
+mode "$keyboard_layout" {
+ 
+bindsym 1 exec --no-startup-id setxkbmap us ,mode "default"
+bindsym 2 exec --no-startup-id setxkbmap pl ,mode "default"
+bindsym 3 exec --no-startup-id setxkbmap ru ,mode "default"
+bindsym 4 exec --no-startup-id setxkbmap ca -variant fr,mode "default"
+bindsym 5 exec --no-startup-id setxkbmap zh ,mode "default"
+ 
+# back to normal: Enter or Escape
+bindsym Return mode "default"
+bindsym Escape mode "default"
+}
+bindsym XF86LaunchA mode "$keyboard_layout"
